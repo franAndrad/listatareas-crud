@@ -23,7 +23,7 @@ const Formulario = () => {
                     <Form.Control 
                         type="text" 
                         placeholder="Enter email" 
-                        onChange={(e)=>setTarea(e.target.value.trim())} 
+                        onChange={(e)=>setTarea(e.target.value.trimStart())} 
                         value={tarea}
                     />
                     <Button variant="primary" type="submit">Enviar</Button>
