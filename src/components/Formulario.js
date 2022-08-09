@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import ListaTareas from './ListaTareas';
 import './formulario.css';
@@ -6,8 +6,16 @@ import './formulario.css';
 const Formulario = () => {
     // Aqui va la logica
     // crear un state
-    const [arregloTareas, setArregloTareas] = useState([]);
+    let tareasLocalStorage = JSON.parse(localStorage.getItem('listaTareas')) || [];
+    const [arregloTareas, setArregloTareas] = useState(tareasLocalStorage);
     const [tarea, setTarea] = useState('');
+    
+    // ciclo de vida del componente
+    useEffect(()=>{
+    
+        console.log('prueba de ciclo');
+        localStorage.setItem('listaTareas',JSON.stringify(arregloTareas));
+    },[arregloTareas]);
     
     const handleSubmit = (e) => {
         e.preventDefault();
