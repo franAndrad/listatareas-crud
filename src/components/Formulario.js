@@ -14,6 +14,12 @@ const Formulario = () => {
         setArregloTareas([...arregloTareas,tarea]);
         setTarea('');
     }
+    
+    const borrarTarea = (nombre) => {
+        let arregloModificado = arregloTareas.filter((valor)=>{return valor !== nombre});
+        // actualizar el state
+        setArregloTareas(arregloModificado);
+    }
 
     // Aqui va el maquetado y un poco de logica
     return (
@@ -30,7 +36,8 @@ const Formulario = () => {
                 </Form.Group>
             </Form>
             {/* Aqui invoco componente */}
-            <ListaTareas arregloTareas={arregloTareas}></ListaTareas>
+            <ListaTareas arregloTareas={arregloTareas} borrarTarea={borrarTarea}></ListaTareas> 
+            {/* //parentecis no van por que es ejecutar la funcion antes */}
         </div>
     );
 };
