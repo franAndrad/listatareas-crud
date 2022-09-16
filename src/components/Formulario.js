@@ -21,7 +21,6 @@ const Formulario = () => {
             const respuesta = await fetch(URL);
             const listaTareas = await respuesta.json();
             setArregloTareas(listaTareas);
-            console.log(listaTareas)
         } catch (error) {
             console.log(error);
         }
