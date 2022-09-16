@@ -8,7 +8,7 @@ const App = () => {
     return (
         <div> 
             <section className='container my-5'>
-                <Titulo comision='c2i' prueba={123}/>
+                <Titulo/>
                 <Subtitulo />
                 <Formulario></Formulario>
             </section>
