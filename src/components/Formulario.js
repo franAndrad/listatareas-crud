@@ -36,7 +36,7 @@ const Formulario = () => {
                 <Form.Group className="mb-3 d-flex">
                     <Form.Control 
                         type="text" 
-                        placeholder="Enter email" 
+                        placeholder="Ingrese una tarea" 
                         onChange={(e)=>setTarea(e.target.value.trimStart())} 
                         value={tarea}
                     />
